@@ -19,35 +19,28 @@ balle = Pin('P8', Pin.IN)
 buzzer = Pin('P9', Pin.OUT_PP)
 
 # ------------------------------------------------------------
-# SOGLIE COLORE IN SPAZIO LAB
-#   Formato: (L_min, L_max, A_min, A_max, B_min, B_max)
-#   IMPORTANTE: calibra questi valori con lo strumento
+# COLOR THRESHOLDS
+#   Format: (L_min, L_max, A_min, A_max, B_min, B_max)
+#   IMPORTANT! Set threshold before using
 #               "Tools > Machine Vision > Threshold Editor" in OpenMV IDE
 # ------------------------------------------------------------
-red = (0, 70, 23, 127, -19, 53)   # rosso — A alto
-green = (30, 100, -64, -8, -32, 32)   # verde  — A negativo
-yellow = (50, 100, -20, 20, 30, 100)  # giallo — B alto, L alto
-white = (75, 100, -15, 15, -15,  15)   # bianco (porta/nastro)
-black = (0,  40,  -20, 20, -20,  20)   # nero   (robot avversario spesso scuro)
+red = (0, 70, 23, 127, -19, 53)   # red — A +
+green = (30, 100, -64, -8, -32, 32)   # green  — A -
+yellow = (50, 100, -20, 20, 30, 100)  # yellow — B +, L +
+white = (75, 100, -15, 15, -15,  15)   
 # ------------------------------------------------------------
-# PARAMETRI BLOB
+# CONSTANTS TO DETECT A BALL 
 # ------------------------------------------------------------
 BALL_PIXELS_MIN = 80     # area minima pixel per considerare un blob palla
 BALL_PIXELS_MAX = 8000   # area massima (palla troppo grande = falso positivo)
 BALL_ROUNDNESS = 0.35   # elongation minima (1.0 = cerchio perfetto, abbassare se necessario)
-
-GOAL_LINE_MIN_W = 60     # larghezza minima blob bianco per essere la porta
-GOAL_LINE_RATIO = 4.0    # rapporto larghezza/altezza minimo (è una linea orizzontale)
-
-OPPONENT_PIX_MIN = 200    # area minima blob nero per essere il robot avversario
-OPPONENT_PIX_MAX = 15000
 # ------------------------------------------------------------
-# CENTRO FRAME
+# FRAME CENTRE
 # ------------------------------------------------------------
 CX = sensor.width()//2   # 160
 CY = sensor.height()//2   # 120
 # ------------------------------------------------------------
-# FUNZIONI MOVIMENTO
+# MOVEMENT FUNCIONS
 # ------------------------------------------------------------
 EN = Pin("P7", Pin.OUT_PP)
 EN.low()
@@ -75,7 +68,7 @@ def RIGHT():
     M12.pulse_width_percent(50)
 
 
-def TROVA_PALLA_ROSSA(img, red):
+def FIND_BIGGEST_RED_OBJECT(img, red):
 
     img.draw_cross(CX, CY, color=(0, 0, 255), size=12, thickness=2)
 
@@ -100,28 +93,25 @@ def TROVA_PALLA_ROSSA(img, red):
 while True:
     clock.tick()  # Update the FPS clock.
     img = sensor.snapshot()  # Take a picture and return the image.
-    voltage = ((proximity.read() * 3.3) / 4095)  # 1.17736 sono circa 20 cm
 
-    big_red = TROVA_PALLA_ROSSA(img, red)
+    big_red = FIND_BIGGEST_RED_OBJECT(img, red)
 
     if (big_red is not None):
-        if voltage > (1.1):
-            motor_start_time = pyb.millis()
-            while (pyb.millis() - motor_start_time < 300):  # 300 millisecondi
-                M11.pulse_width_percent(0)
-                M12.pulse_width_percent(80)
-
+        if (CX-big_red.cx() < 80):
+            RIGHT()
+            print('i go right')
+        if (CX-big_red.cx() > 80):
+            LEFT()
+            print('i go left')
         else:
-            if (balle.value() != 0):
-                FORWARD()
-                if (CX-big_red.cx() < 80):
-                    RIGHT()
-                    print('vado a destra')
-                if (CX-big_red.cx() > 80):
-                    LEFT()
-                    print('vado a sinistra')
-            else:
-                buzzer.high()
+            FORWARD()
+                                 
+    else:
+        RIGHT()
+        print('looking for a red object')
+            
+  
+           
 
 
 
