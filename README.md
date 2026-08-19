@@ -9,7 +9,8 @@ The basic version of the robot is fully 3D printable and uses less components as
 
 
 
-HOW DO I START?
+
+#HOW DO I START?
 
 The few, simple steps are:
 
@@ -28,3 +29,4 @@ The few, simple steps are:
 - Enjoy!
 
 IMPORTANT! All the software runs on the OpenMV Cam, so you should check: www.openmv.io
+
