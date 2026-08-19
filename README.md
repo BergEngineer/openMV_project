@@ -17,7 +17,7 @@ The few, simple steps are:
   
 - in the same folder check for the "robot_components_list" file, and buy the electrical components (wires, screws and other minor components not included in the list!).
 
-- in the same folder open the "instructions" file and follow the steps to build your CamBot.
+- in the same folder open the "instructions" file and follow the step by step guide to build your CamBot.
 
 - Download OpenMV IDE.
 
