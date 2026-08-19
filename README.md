@@ -10,7 +10,7 @@ The basic version of the robot is fully 3D printable and uses less components as
 
 
 
-#HOW DO I START?
+--------------------------------------------------HOW DO I START?-----------------------------------------------------
 
 The few, simple steps are:
 
