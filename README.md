@@ -7,7 +7,7 @@ It's aim is to be a reliable, affordable and easy to build robot, thanks to whic
 NOTE: CamBot's compact pocket-size design makes it the perfect companion for learning on the go. Whether at home, in the classroom, or on the move, the robot is always ready to turn ideas into hands-on experiments with computer vision and autonomous robotics.
 The basic version of the robot is fully 3D printable and uses less components as possible, so you can build it in less than 10 minutes with few tools.In any case, its modular structure makes it easy to customize the robot, allowing you to adapt parts and add components as you wish. For example, if I want the robot to have a mechanical arm, I simply need to connect a servomotor to the designated mount.
 
-<img width="314" height="234" alt="ChatGPT Image Aug 19, 2026, 02_53_29 PM" src="https://github.com/user-attachments/assets/6fb63d49-850f-4082-be39-d8cf8a8bb158" />
+<img width="418" height="311" alt="ChatGPT Image Aug 19, 2026, 02_53_29 PM" src="https://github.com/user-attachments/assets/6fb63d49-850f-4082-be39-d8cf8a8bb158" />
 
 
 
