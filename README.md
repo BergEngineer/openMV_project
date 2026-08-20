@@ -38,10 +38,11 @@ Perception → Processing → Decision → Motion
 
 Students can observe what the camera sees through OpenMV IDE, modify the vision algorithm in MicroPython and immediately observe how those changes affect the physical behaviour of the robot.
 
+
 *PROJECT STATUS: ALPHA*
+
 CamBot is currently under active development. Hardware, software and documentation may change. The current release is intended fo experimentation, testing and community feedback!
 
-*
 
 
 *--------------------------------------------------HOW DO I START?-----------------------------------------------------*
