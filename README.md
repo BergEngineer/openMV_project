@@ -14,7 +14,7 @@ The basic version of the robot is fully 3D printable and uses less components as
 
 _*KEY FEATURES:*_
 
--OpenMV-powered machine vision
+-OpenMV-powered machine vision <br>
 -Pocket-sized design
 -3D-printable chassis
 -2 motors locomotion
