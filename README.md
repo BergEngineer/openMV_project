@@ -15,13 +15,13 @@ The basic version of the robot is fully 3D printable and uses less components as
 _*KEY FEATURES:*_
 
 -OpenMV-powered machine vision <br>
--Pocket-sized design
--3D-printable chassis
--2 motors locomotion
--Real-time visual debugging through OpenMV IDE
--MicroPython
--Modular/expandable architecture
--Fully open-source
+-Pocket-sized design <br>
+-3D-printable chassis <br>
+-2 motors locomotion <br>
+-Real-time visual debugging through OpenMV IDE <br>
+-MicroPython <br>
+-Modular/expandable architecture <br>
+-Fully open-source <br>
 
 
 *WHAT CAN CAMBOT DO?*
