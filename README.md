@@ -12,7 +12,7 @@ The basic version of the robot is fully 3D printable and uses less components as
 <img width="502" height="374" alt="ChatGPT Image Aug 19, 2026, 02_53_29 PM" src="https://github.com/user-attachments/assets/6fb63d49-850f-4082-be39-d8cf8a8bb158" />
 
 
-*KEY FEATURES:*
+_*KEY FEATURES:*_
 
 -OpenMV-powered machine vision
 -Pocket-sized design
