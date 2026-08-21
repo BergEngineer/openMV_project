@@ -1,5 +1,6 @@
 # CamBot
-<img width="1254" height="1254" alt="ChatGPT Image Aug 21, 2026, 10_48_42 AM" src="https://github.com/user-attachments/assets/03e220be-d18c-4171-8a86-4556a08bd294" />
+<img width="1448" height="1086" alt="ChatGPT Image 21 ago 2026, 11_55_34" src="https://github.com/user-attachments/assets/eb6d8c7a-aa45-4617-9548-d9d266256e7a" />
+
 
 
 CamBot is an autonomous robot powered by computer vision using the OpenMV camera. The system processes visual input in real time — detecting objects, tracking targets, and making navigation decisions onboard without relying on external computation. Built with OpenMV MicroPython, the project explores embedded machine vision as the primary sense.
